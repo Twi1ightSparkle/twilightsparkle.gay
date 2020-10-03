@@ -77,9 +77,11 @@
             document.getElementById("bottomRight").innerHTML = derpiLink;
         }
 
-        window.onload = function() {
-            setBackground();
-        }
+        setBackground();
+
+        setInterval(function() {
+            setBackground()
+        }, 30000)
     </script>
 
 </body>

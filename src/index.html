@@ -65,8 +65,8 @@
             // Get the Derpi ID and put a link in the bottom right
             let derpiId;
             derpiId = derpiUrl.match(/\d+/g);
-            derpiUrl = "https://derpibooru.org/" + derpiId[derpiId.length - 1]
-            document.getElementById("bottomright").innerHTML = "<a href=\"" + derpiUrl + "\">image source</a>"
+            derpiLink = "<a href=\"" + "https://derpibooru.org/" + derpiId[derpiId.length - 1] + "\" target=_blank>Image source</a>";
+            document.getElementById("bottomRight").innerHTML = derpiLink;
         }
 
         window.onload = function() {

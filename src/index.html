@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            background: #460042;
+        }
+
+        #bg {
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        #bottomright {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="bg"></div>
+    <div class="container">
+        <div id="bottomright"></div>
+    </div>
+
+    <script>
+        let derpiUrls = [
+            "https://derpicdn.net/img/view/2015/7/22/941421.jpeg",
+            "https://derpicdn.net/img/view/2015/8/4/950679.jpeg",
+            "https://derpicdn.net/img/view/2015/9/30/991114.png",
+            "https://derpicdn.net/img/view/2016/3/21/1113886.jpeg",
+            "https://derpicdn.net/img/view/2016/6/1/1167805.png",
+            "https://derpicdn.net/img/view/2017/5/14/1436619.jpeg",
+            "https://derpicdn.net/img/view/2019/2/13/1960984.png",
+            "https://derpicdn.net/img/view/2019/4/13/2011019.jpeg",
+        ]
+
+        function setBackground() {
+            // Pick a random URL and update CSS background image
+            let derpiUrl;
+            derpiUrl = derpiUrls[Math.floor(Math.random() * derpiUrls.length)];
+            document.getElementById('bg').style.backgroundImage = "url(" + derpiUrl + ")";
+
+            // Get the Derpi ID and put in in the bottom right
+            let derpiId;
+            derpiId = derpiUrl.match(/\d+/g);
+            derpiUrl = "https://derpibooru.org/" + derpiId[derpiId.length - 1]
+            document.getElementById("bottomright").innerHTML = "<a href=\"" + derpiUrl + "\">image source</a>"
+        }
+
+        window.onload = function() {
+            setBackground();
+        }
+    </script>
+
+</body>
+
+</html>

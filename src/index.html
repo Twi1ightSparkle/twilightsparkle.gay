@@ -62,7 +62,7 @@
             derpiUrl = derpiUrls[Math.floor(Math.random() * derpiUrls.length)];
             document.getElementById('bg').style.backgroundImage = "url(" + derpiUrl + ")";
 
-            // Get the Derpi ID and put in in the bottom right
+            // Get the Derpi ID and put a link in the bottom right
             let derpiId;
             derpiId = derpiUrl.match(/\d+/g);
             derpiUrl = "https://derpibooru.org/" + derpiId[derpiId.length - 1]
